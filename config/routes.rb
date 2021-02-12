@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'posts#index'
+  get '/notifications', to: 'users#user_notifications', as: 'user_notifications'
 
   devise_for :users
 
