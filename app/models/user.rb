@@ -11,4 +11,10 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
+
+  def friends
+    friends_array = friendships.map {|friendship| friendship.friend if friendship.status}
+    friends_array + inverse_friendships.map {|friendship| friendship.user if friendship.status}
+    friends_array.compact
+  end
 end
