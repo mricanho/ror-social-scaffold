@@ -26,12 +26,12 @@ gem 'jbuilder'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-# Add general gems 
+# Add general gems
 gem 'bulma-rails', '~> 0.9.1'
 gem 'gravatar_image_tag', '~> 1.2'
+gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
-gem "sentry-ruby"
-gem "sentry-rails"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
@@ -50,8 +50,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'rspec'
   gem 'capybara', '>= 3.26'
+  gem 'rspec'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
@@ -67,5 +67,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
 end
-
-
