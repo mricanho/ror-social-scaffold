@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'Validations' do
-    # Content
+  
     it { should validate_presence_of(:content) }
 
     it {
@@ -17,13 +17,13 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'Post' do
-    # User
+ 
     it { should belong_to(:user) }
 
-    # Comments
+  
     it { should have_many(:comments).dependent(:destroy) }
 
-    # Likes
+
     it { should have_many(:likes).dependent(:destroy) }
   end
 end

@@ -1,9 +1,8 @@
+# rubocop:disable Style/InverseMethods
 module UserHelper
-  # rubocop:disable Style/InverseMethods
   def all_users
     User.select { |x| x.id != current_user.id }
   end
-  # rubocop:enable Style/InverseMethods
 
   def gravatar_for(user, size: 60)
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
@@ -54,3 +53,4 @@ module UserHelper
     end
   end
 end
+# rubocop:enable Style/InverseMethods

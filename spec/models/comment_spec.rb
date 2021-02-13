@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   describe 'Validations' do
-    # Content
+
     it { should validate_presence_of(:content) }
 
     it {
@@ -17,10 +17,10 @@ RSpec.describe Comment, type: :model do
   end
 
   describe 'Comment' do
-    # User
+ 
     it { should belong_to(:user) }
 
-    # Post
+
     it { should belong_to(:post) }
   end
 end
