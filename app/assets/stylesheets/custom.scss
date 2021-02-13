@@ -5,6 +5,7 @@ $primary-color: #8bc34a;
 $primary-color-light: #dcedc8;
 $primary-color-text: #212121;
 $divider-color: #bdbdbd;
+$secondary-color: #fff;
 
 * {
   margin: 0;
@@ -14,7 +15,7 @@ $divider-color: #bdbdbd;
 }
 
 body {
-  background: #fff;
+  background: $secondary-color;
   position: relative;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -42,20 +43,6 @@ a {
   background-color: $primary-color-dark;
   color: $primary-color-light;
 
-  a {
-    color: $primary-color-light;
-    text-transform: uppercase;
-    font-weight: 900;
-  }
-
-  .active a {
-    color: #fff;
-  }
-
-  a:hover {
-    color: #fff;
-  }
-
   .menu {
     width: 80%;
     justify-content: space-between;
@@ -63,8 +50,24 @@ a {
     .menu-item {
       float: left;
       margin: 0 15px;
+
+      .active {
+        a {
+          color: $secondary-color;
+        }
+      }
     }
   }
+}
+
+.nav a {
+  color: $primary-color-light;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.nav a:hover {
+  color: $secondary-color;
 }
 
 .main {
@@ -98,8 +101,76 @@ a {
   color: red;
 }
 
+form {
+  width: 80%;
+  margin: 8px 0;
+
+  .field {
+    width: 100%;
+    padding: 8px 0px;
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid $divider-color;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: $primary-color-light;
+    }
+
+    input[type="checkbox"] {
+      width: fit-content;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  input[type="submit"] {
+    padding: 8px;
+    width: fit-content;
+    border: none;
+    border-radius: 4px;
+    background-color: $primary-color-dark;
+    color: $primary-color-light;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  input[type="submit"]:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
+
+  .actions.reset {
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+
+  #error_explanation {
+    h2 {
+      color: $primary-color-text;
+      font-size: 1em;
+    }
+    ul {
+      color: #f00;
+    }
+  }
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 16px;
+  text-transform: capitalize;
+}
+
 .new_post,
-.new_comment {
+.new_comment{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,66 +205,6 @@ a {
     width: 30%;
     margin-left: 70%;
   }
-}
-
-form {
-  width: 80%;
-  margin: 8px 0;
-
-  .field {
-    width: 100%;
-    padding: 8px 0;
-
-    label {
-      margin-bottom: 8px;
-    }
-
-    input {
-      width: 100%;
-      border: 1px solid $divider-color;
-      border-radius: 4px;
-      padding: 8px;
-      background-color: $primary-color-light;
-    }
-
-    input[type="checkbox"] {
-      width: auto;
-    }
-  }
-
-  .actions {
-    display: flex;
-    justify-content: center;
-    margin: 8px 0;
-  }
-
-  input[type="submit"] {
-    padding: 8px;
-    width: 50%;
-    border: none;
-    border-radius: 4px;
-    background-color: $primary-color-dark;
-    color: $primary-color-light;
-    text-transform: uppercase;
-    font-weight: 900;
-  }
-
-  input[type="submit"]:hover {
-    background-color: $primary-color;
-    color: #fff;
-  }
-
-  .actions.reset {
-    input[type="submit"] {
-      width: 100%;
-    }
-  }
-}
-
-.title {
-  text-align: center;
-  margin-bottom: 16px;
-  text-transform: capitalize;
 }
 
 .timeline {
@@ -231,13 +242,12 @@ form {
   .post-liking {
     float: right;
 
-    a {
+    a{
       color: $primary-color-dark;
       font-weight: bold;
       font-size: 0.9em;
       margin: 0 4px;
     }
-
     .post-date {
       font-size: 0.6em;
     }
@@ -246,6 +256,7 @@ form {
   .post-content {
     font-size: 1.1em;
     padding: 4px 0;
+    margin: 0 0 5px 0;
   }
 
   .post-comments-section {
@@ -262,10 +273,9 @@ form {
       padding: 10px;
 
       p {
-        font-size: 0.8em;
+        font-size: .8em;
         width: 90%;
       }
-
       span {
         position: absolute;
         right: 3px;
@@ -282,11 +292,11 @@ form {
   .users-list li {
     margin-bottom: 16px;
     text-transform: capitalize;
-    font-size: 1.2em;
+    font-size: 1.2em;    
   }
 
   .profile-link {
-    font-size: 0.8em;
+    font-size: 1em;
     margin: 0 0 8px 0;
     color: $primary-color-dark;
   }
@@ -297,29 +307,63 @@ form {
   margin-left: 16px;
 
   h2 {
+    display: inline-block;
     text-transform: capitalize;
+    vertical-align: middle;
   }
 
   .timeline {
     width: 100%;
-
     h3 {
       width: 100%;
     }
-
     justify-content: start;
   }
 }
 
-#error_explanation {
-  h2 {
-    color: $primary-color-text;
-    font-size: 1em;
-  }
+.button-parent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  ul {
-    color: #f00;
-  }
+.button-friendship {
+  display: inline-block;
+  justify-items: right;
+}
+
+.status {
+  margin: 8px 0;
+  padding: 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13.33px;
+}
+
+.pending {  
+  color: $primary-color-text;
+  background-color: $divider-color;
+}
+
+.comments-likes-size {
+  font-size: 0.7em;
+  font-weight: 600;
+  color: $primary-color-dark;
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.notification img {
+  vertical-align: top;
+  height: 18px;
 }
 
 @media only screen and (min-width: 480px) {

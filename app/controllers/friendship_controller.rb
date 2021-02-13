@@ -16,6 +16,23 @@ class FriendshipController < ApplicationController
         friendship_redirect
     end
 
+    def update
+      @friendship = Friendship.find(params[:id])
+      @friendship.update_attribute(:status, true)
+      @friendship_two = Friendship.new(user_id: @friendship.friend_id, friend_id: @friendship.user_id, status: true)
+      @friendship_two.save
+      flash[:notice] = 'Friendship has been accepted'
+      friendship_redirect
+    end
+
+    def destroy
+      Friendship.find(params[:id]).destroy
+      flash[:notice] = 'Friendship has been rejected'
+      friendship_redirect
+    end
+
+    private
+
     def friendship_params
       params.require(:friendship).permit(:friend_id, :user_id, :id)
     end
