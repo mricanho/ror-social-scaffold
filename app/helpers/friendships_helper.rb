@@ -4,6 +4,7 @@ module FriendshipsHelper
                      current_user.id, friend_id, friend_id, current_user.id).first
   end
 
+  # rubocop:disable Lint/EmptyConditionalBody
   def friendship_button(user)
     friendship = verify_friendship(user)
     if friendship.nil?
@@ -20,4 +21,5 @@ module FriendshipsHelper
       content_tag(:p, 'Pending Response', class: 'button-friendship status pending')
     end
   end
+  # rubocop:enable Lint/EmptyConditionalBody
 end
