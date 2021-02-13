@@ -1,4 +1,4 @@
-<p> You received a friendship request from: </p>
+<p> You received a friend request from: </p>
 <br>
 <div class="button-parent">
   <div>
@@ -7,7 +7,7 @@
     <%= user.name %>
   </div> 
   <div>
-    <%= button_to 'Accept Friendship', friendship_path(friendship.id), method: :put %>
-    <%= button_to 'Reject Friendship', friendship_path(friendship.id), method: :delete %>
+    <%= button_to 'Accept Friend', friendship_path(friendship.id), method: :put %>
+    <%= button_to 'Reject Friend', friendship_path(friendship.id), method: :delete %>
   </div>
 </div>
