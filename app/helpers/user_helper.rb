@@ -1,8 +1,7 @@
 module UserHelper
   # rubocop:disable Style/InverseMethods
   def all_users
-    users = User.select { |x| x.id != current_user.id }
-    users
+    User.select { |x| x.id != current_user.id }
   end
   # rubocop:enable Style/InverseMethods
 
@@ -22,8 +21,7 @@ module UserHelper
   def requested_and_received
     list = current_user.friendships.map { |x| x.friend_id if x.status.nil? }
     list += current_user.inverse_friendships.map { |x| x.user_id if x.status.nil? }
-    users = User.where(id: list)
-    users
+    User.where(id: list)
   end
 
   def verify_user(user)
