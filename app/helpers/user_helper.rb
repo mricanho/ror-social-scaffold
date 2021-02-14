@@ -1,7 +1,6 @@
-# rubocop:disable Style/InverseMethods
 module UserHelper
   def all_users
-    User.select { |x| x.id != current_user.id }
+    User.reject { |x| x.id == current_user.id }
   end
 
   def gravatar_for(user, size: 60)
@@ -53,4 +52,3 @@ module UserHelper
     end
   end
 end
-# rubocop:enable Style/InverseMethods
