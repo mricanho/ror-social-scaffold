@@ -1,4 +1,3 @@
-# rubocop:disable Lint/EmptyConditionalBody
 module FriendshipsHelper
   def verify_friendship(friend_id)
     Friendship.where('(user_id = ? and friend_id = ?) OR (user_id = ? and friend_id = ?)',
@@ -22,4 +21,3 @@ module FriendshipsHelper
     end
   end
 end
-# rubocop:enable Lint/EmptyConditionalBody

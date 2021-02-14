@@ -36,6 +36,31 @@ a {
   color: $primary-color-text;
 }
 
+.post-liking {
+  float: right;
+
+  a {
+    color: $primary-color-dark;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin: 0 4px;
+  }
+
+  .post-date {
+    font-size: 0.6em;
+  }
+}
+
+.nav a {
+  color: $primary-color-light;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.nav a:hover {
+  color: $secondary-color;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -58,16 +83,6 @@ a {
       }
     }
   }
-}
-
-.nav a {
-  color: $primary-color-light;
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-.nav a:hover {
-  color: $secondary-color;
 }
 
 .main {
@@ -101,13 +116,24 @@ a {
   color: red;
 }
 
+.user-selection h2 {
+  display: inline-block;
+  text-transform: capitalize;
+  vertical-align: middle;
+}
+
 form {
   width: 80%;
   margin: 8px 0;
 
+  label {
+    display: none;
+  }
+
   .field {
     width: 100%;
-    padding: 8px 0px;
+    padding: 8px 0;
+
     label {
       margin-bottom: 8px;
     }
@@ -121,7 +147,7 @@ form {
     }
 
     input[type="checkbox"] {
-      width: fit-content;
+      width: auto;
     }
   }
 
@@ -130,9 +156,10 @@ form {
     justify-content: center;
     margin: 8px 0;
   }
+
   input[type="submit"] {
     padding: 8px;
-    width: fit-content;
+    width: auto;
     border: none;
     border-radius: 4px;
     background-color: $primary-color-dark;
@@ -157,6 +184,7 @@ form {
       color: $primary-color-text;
       font-size: 1em;
     }
+
     ul {
       color: #f00;
     }
@@ -170,15 +198,11 @@ form {
 }
 
 .new_post,
-.new_comment{
+.new_comment {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-
-  label {
-    display: none;
-  }
 
   .form-control {
     width: 100%;
@@ -239,20 +263,6 @@ form {
     }
   }
 
-  .post-liking {
-    float: right;
-
-    a{
-      color: $primary-color-dark;
-      font-weight: bold;
-      font-size: 0.9em;
-      margin: 0 4px;
-    }
-    .post-date {
-      font-size: 0.6em;
-    }
-  }
-
   .post-content {
     font-size: 1.1em;
     padding: 4px 0;
@@ -273,9 +283,10 @@ form {
       padding: 10px;
 
       p {
-        font-size: .8em;
+        font-size: 0.8em;
         width: 90%;
       }
+
       span {
         position: absolute;
         right: 3px;
@@ -292,7 +303,7 @@ form {
   .users-list li {
     margin-bottom: 16px;
     text-transform: capitalize;
-    font-size: 1.2em;    
+    font-size: 1.2em;
   }
 
   .profile-link {
@@ -306,17 +317,13 @@ form {
   width: 100%;
   margin-left: 16px;
 
-  h2 {
-    display: inline-block;
-    text-transform: capitalize;
-    vertical-align: middle;
-  }
-
   .timeline {
     width: 100%;
+
     h3 {
       width: 100%;
     }
+
     justify-content: start;
   }
 }
@@ -341,7 +348,7 @@ form {
   font-size: 13.33px;
 }
 
-.pending {  
+.pending {
   color: $primary-color-text;
   background-color: $divider-color;
 }
