@@ -11,8 +11,7 @@ Stay In Touch is a Social Media App, created using the RoRSocialScaffold by Micr
 
 ## Live Demo
 
-TBA
-
+<a href="https://damp-earth-66529.herokuapp.com/">Visit Page</a>
 
 ## Getting Started
 
