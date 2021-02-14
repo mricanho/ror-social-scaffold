@@ -1,11 +1,13 @@
-# Scaffold for social media app with Ruby on Rails
+# Stay in touch
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+Stay In Touch is a Social Media App, created using the RoRSocialScaffold by Microverse. The main scope is practicing the bi-directional self-referential relationships in ActiveRecord models.
+
+![screenshot](./code.jpeg)
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v5.2.4
+- Ruby v2.7.2
+- Ruby on Rails v6.1.1
 
 ## Live Demo
 
@@ -18,8 +20,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
+Ruby: 2.7.2
+Rails: 6.1.1
 Postgres: >=9.5
 
 ### Setup
@@ -63,15 +65,16 @@ Open `http://localhost:3000/` in your browser.
     rpsec --format documentation
 ```
 
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
-
 ### Deployment
 
 TBA
 
 ## Authors
 
-TBA
+👤 *Miguel Ricaño*
+
+- Github: [@mricanho](https://github.com/mricanho)
+- Linkedin: [Miguel Ricaño](https://www.linkedin.com/in/mricanho/)
 
 ## 🤝 Contributing
 
@@ -85,9 +88,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- Microverse
 
 ## 📝 License
 
-TBA
+This project is [MIT](LICENSE) licensed.
 

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include UserHelper
   before_action :authenticate_user!
 
   def index
@@ -8,5 +9,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts.ordered_by_most_recent
+  end
+
+  def user_notifications
+    @users = requested_and_received
   end
 end
