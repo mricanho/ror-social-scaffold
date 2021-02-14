@@ -1,3 +1,4 @@
+# rubocop:disable Lint/EmptyConditionalBody
 module FriendshipsHelper
   def verify_friendship(friend_id)
     Friendship.where('(user_id = ? and friend_id = ?) OR (user_id = ? and friend_id = ?)',
@@ -12,7 +13,7 @@ module FriendshipsHelper
                              friendships_path(params: { friendship: { friend_id: user.id, user_id: current_user.id } }),
                              method: :post, class: 'button-friendship'), class: 'button-friendship')
     elsif friendship.status
-      yield
+
     elsif friendship.user_id == user.id
       content_tag(:div, (button_to 'Accept Friendship', friendship_path(friendship.id), method: :put) +
                           (button_to 'Reject Friendship', friendship_path(friendship.id), method: :delete))
@@ -21,3 +22,4 @@ module FriendshipsHelper
     end
   end
 end
+# rubocop:enable Lint/EmptyConditionalBody
