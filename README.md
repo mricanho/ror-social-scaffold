@@ -75,6 +75,12 @@ TBA
 - Github: [@mricanho](https://github.com/mricanho)
 - Linkedin: [Miguel Ricaño](https://www.linkedin.com/in/mricanho/)
 
+👤 **Harshdeep Kanhai**
+
+- GitHub: [@harshdeepkanhai](https://github.com/harshdeepkanhai)
+- Twitter: [@harshdeepkanhai](https://twitter.com/harshdeepkanhai)
+- LinkedIn: [harshdeepkanhai](https://linkedin.com/in/harshdeepkanhai)
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
